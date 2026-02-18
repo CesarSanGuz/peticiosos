@@ -518,9 +518,26 @@
   </script>
   <script>
     var cart = [];
+    var CART_KEY = "peticiosos_cart";
+
+    function loadCart(){
+      try{
+        const raw = localStorage.getItem(CART_KEY);
+        cart = raw ? JSON.parse(raw) : [];
+      }catch(e){
+        cart = [];
+      }
+    }
+
+    function saveCart(){
+      try{
+        localStorage.setItem(CART_KEY, JSON.stringify(cart));
+      }catch(e){}
+    }
 
     window.addToCart = function(name, price){
       cart.push({name, price});
+      saveCart();
       if (window.M) M.toast({html: "Agregado: " + name});
       renderCart();
     }
@@ -553,12 +570,14 @@
 
     window.removeItem = function(index){
       cart.splice(index, 1);
+      saveCart();
       renderCart();
     }
 
     window.openCart = function(){
       const el = document.getElementById("cartModal");
       const modal = M.Modal.getInstance(el) || M.Modal.init(el);
+      renderCart();
       modal.open();
     }
 
@@ -579,6 +598,8 @@
 
     document.addEventListener('DOMContentLoaded', function() {
       M.AutoInit();
+      loadCart();
+      renderCart();
 
       const searchInput = document.getElementById("searchInput");
       if(searchInput){

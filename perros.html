@@ -519,10 +519,27 @@
     <script>
         // ✅ 1) VARIABLES GLOBALES (antes de cualquier función)
         var cart = [];
+        var CART_KEY = "peticiosos_cart";
+
+        function loadCart(){
+          try{
+            const raw = localStorage.getItem(CART_KEY);
+            cart = raw ? JSON.parse(raw) : [];
+          }catch(e){
+            cart = [];
+          }
+        }
+
+        function saveCart(){
+          try{
+            localStorage.setItem(CART_KEY, JSON.stringify(cart));
+          }catch(e){}
+        }
 
         // ✅ 2) EXPONER FUNCIONES PARA onclick=""
         window.addToCart = function(name, price){
             cart.push({name, price});
+            saveCart();
             if (window.M) M.toast({html: "Agregado: " + name});
             renderCart();
         }
@@ -556,12 +573,14 @@
 
         window.removeItem = function(index){
             cart.splice(index, 1);
+            saveCart();
             renderCart();
         }
 
         window.openCart = function(){
             const el = document.getElementById("cartModal");
             if(!el) return;
+            renderCart();
             const modal = M.Modal.getInstance(el) || M.Modal.init(el);
             modal.open();
         }
@@ -590,6 +609,8 @@
         // ✅ 3) INIT MATERIALIZE
         document.addEventListener('DOMContentLoaded', function() {
             M.AutoInit();
+            loadCart();
+            renderCart();
 
             // 🔎 Si NO tienes buscador en este HTML, comenta esto para evitar error:
             const searchInput = document.getElementById("searchInput");
