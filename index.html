@@ -13,14 +13,25 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <style>
+    :root {
+      --pink-pastel: #f3b2bf;
+      --blue-pastel: #8ebfe3;
+      --wine-red: #b1322d;
+      --cream: #fff6f9;
+      --rose-100: #fde7ee;
+      --sky-100: #e8f2fb;
+      --mint-100: #ecf7f4;
+      --gray-900: #3a3a3a;
+    }
+
     body {
-      background-color: #fff8fb;
+      background-color: var(--cream);
     }
 
     nav {
       background-color: #ffffff;
       box-shadow: none;
-      border-bottom: 2px solid #f8c4d8;
+      border-bottom: 2px solid var(--pink-pastel);
     }
 
     .brand-logo img {
@@ -29,19 +40,20 @@
     }
 
     .btn-pink {
-      background-color: #f8c4d8;
-      color: #3a3a3a;
+      background-color: var(--pink-pastel);
+      color: var(--gray-900);
       font-weight: bold;
       border-radius: 20px;
     }
 
     .btn-blue {
-      background-color: #2d5fa4;
+      background-color: var(--blue-pastel);
+      color: var(--gray-900);
       border-radius: 20px;
     }
 
     .section-title {
-      color: #2d5fa4;
+      color: var(--wine-red);
       font-weight: bold;
     }
 
@@ -50,13 +62,77 @@
     }
 
     footer {
-      background-color: #f8c4d8;
+      background-color: var(--pink-pastel);
       padding: 20px 0;
+    }
+
+    .accent-wine {
+      color: var(--wine-red);
+    }
+
+    .soft-pink {
+      background-color: var(--rose-100);
+    }
+
+    .soft-blue {
+      background-color: var(--sky-100);
+    }
+
+    .soft-mint {
+      background-color: var(--mint-100);
+    }
+
+    .side-mascot-stack {
+      position: fixed;
+      top: 50%;
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      transform: translateY(-50%);
+      user-select: none;
+    }
+
+    .side-mascot {
+      font-size: 64px;
+      line-height: 1;
+      transition: transform 220ms ease, filter 220ms ease;
+      filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.12));
+      cursor: pointer;
+    }
+
+    .side-mascot-stack.left {
+      left: 18px;
+    }
+
+    .side-mascot-stack.right {
+      right: 18px;
+    }
+
+    .side-mascot:hover {
+      transform: rotate(-6deg) scale(1.06);
+    }
+
+    @media (max-width: 900px) {
+      .side-mascot-stack {
+        display: none;
+      }
     }
   </style>
 </head>
 
 <body>
+
+<div class="side-mascot-stack left" aria-hidden="true">
+  <span class="side-mascot" role="img" aria-label="Perrito">🐶</span>
+  <span class="side-mascot" role="img" aria-label="Gatito">🐱</span>
+  <span class="side-mascot" role="img" aria-label="Hámster">🐹</span>
+</div>
+<div class="side-mascot-stack right" aria-hidden="true">
+  <span class="side-mascot" role="img" aria-label="Perrito">🐶</span>
+  <span class="side-mascot" role="img" aria-label="Gatito">🐱</span>
+  <span class="side-mascot" role="img" aria-label="Hámster">🐹</span>
+</div>
 
 <!-- 🔹 NAVBAR -->
 <iframe src="components/header.html" style="width:100%; border:0; height:80px;"></iframe>
@@ -120,7 +196,7 @@
 </div>
 
 <!-- 🔹 NOSOTROS -->
-<div id="nosotros" class="section pink lighten-5">
+<div id="nosotros" class="section soft-pink">
   <div class="container">
 
     <div class="row" style="margin-bottom: 0;">
@@ -190,7 +266,7 @@
       <div class="col s12 m4">
         <div class="card" style="border-radius:20px;">
           <div class="card-content center">
-            <i class="material-icons large pink-text">verified</i>
+              <i class="material-icons large accent-wine">verified</i>
             <span class="card-title" style="font-weight:700;">Calidad</span>
             <p>Elegimos productos confiables, funcionales y seguros para el bienestar de tu mascota.</p>
           </div>
@@ -200,7 +276,7 @@
       <div class="col s12 m4">
         <div class="card" style="border-radius:20px;">
           <div class="card-content center">
-            <i class="material-icons large blue-text">local_shipping</i>
+              <i class="material-icons large" style="color: var(--blue-pastel);">local_shipping</i>
             <span class="card-title" style="font-weight:700;">Atención rápida</span>
             <p>Te respondemos para ayudarte a elegir y coordinar tu pedido de forma sencilla.</p>
           </div>
@@ -210,7 +286,7 @@
       <div class="col s12 m4">
         <div class="card" style="border-radius:20px;">
           <div class="card-content center">
-            <i class="material-icons large amber-text">favorite</i>
+              <i class="material-icons large" style="color: var(--pink-pastel);">favorite</i>
             <span class="card-title" style="font-weight:700;">Amor por las mascotas</span>
             <p>Somos petlovers 🐾 y queremos que tus engreídos vivan felices y bien cuidados.</p>
           </div>
@@ -245,7 +321,12 @@
         </div>
 
         <div class="center">
-          <button class="btn btn-pink">Enviar</button>
+          <a
+            class="btn btn-pink"
+            href="https://wa.me/51923065300?text=Hola%20Peticiosos%2C%20quisiera%20solicitar%20informaci%C3%B3n%20detallada%20sobre%20sus%20productos%20y%20precios.%20%C2%BFMe%20podr%C3%ADan%20ayudar%20por%20favor%3F"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Enviar</a>
         </div>
 
       </form>
