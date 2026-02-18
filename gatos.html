@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Peticiosos | Accesorios para Gatos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <link rel="icon" type="image/png" href="assets/logo-peticiosos.jpg">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+    body { background-color: #fff8fb; }
+
+    .section-title{ color:#2d5fa4; font-weight:900; }
+
+    .soft-card{
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
+      border: 1px solid rgba(0,0,0,.06);
+    }
+
+    .price-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      font-weight:900;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(248,196,216,.45);
+      border:1px solid rgba(0,0,0,.06);
+    }
+
+    .btn-pink{
+      background:#f8c4d8;
+      color:#3a3a3a;
+      font-weight:900;
+      border-radius:999px;
+      text-transform:none;
+      box-shadow:none;
+    }
+    .btn-blue{
+      background:#2d5fa4;
+      border-radius:999px;
+      text-transform:none;
+      box-shadow:none;
+      font-weight:900;
+    }
+
+    .search-box{
+      background:#fff;
+      border-radius:999px;
+      padding: 6px 14px;
+      border:1px solid rgba(0,0,0,.08);
+      box-shadow: 0 10px 25px rgba(0,0,0,.06);
+    }
+    .search-box input{
+      margin:0 !important;
+      border-bottom:none !important;
+      box-shadow:none !important;
+    }
+    .search-box i{ margin-right:8px; }
+
+    /* ✅ GRID FLEX (evita saltos) */
+    #productGrid{ display:flex; flex-wrap:wrap; }
+    #productGrid .col{ float:none !important; display:flex; }
+    #productGrid .card{ width:100%; height:100%; display:flex; flex-direction:column; }
+    #productGrid .card-content{ flex:1; }
+    #productGrid .card-action{ margin-top:auto; }
+
+    footer{ margin-top:40px; }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER (iframe) -->
+  <iframe src="components/header.html" style="width:100%; border:0; height:80px;" scrolling="no"></iframe>
+
+  <!-- TÍTULO + BUSCADOR -->
+  <div class="section center">
+    <div class="container">
+      <h4 class="section-title">Accesorios para Gatos 🐱</h4>
+      <p class="grey-text text-darken-2">Rascadores, juguetes, arena, comederos y más.</p>
+
+      <div class="row" style="margin-top:20px;">
+        <div class="col s12 m8 offset-m2">
+          <div class="search-box valign-wrapper">
+            <i class="material-icons grey-text">search</i>
+            <input id="searchInput" type="text" placeholder="Buscar (ej: rascador, arena, juguete, comedero)">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRID -->
+  <div class="section">
+    <div class="container">
+      <div class="row" id="productGrid">
+
+        <!-- 1 -->
+        <div class="col s12 m6 l4 product-item" data-name="rascador torre sisal">
+          <div class="card soft-card">
+            <div class="card-image">
+              <img src="assets/cat-acc-1.jpg" alt="Rascador Torre">
+              <span class="card-title" style="font-weight:900;">Rascador Torre (Sisal)</span>
+            </div>
+            <div class="card-content">
+              <p>Rascador resistente para proteger tus muebles y ayudar al bienestar del gato.</p>
+              <p style="margin-top:12px;">
+                <span class="price-badge"><i class="material-icons">sell</i> S/ 79.90</span>
+                <span class="grey-text" style="margin-left:10px;">1 und</span>
+              </p>
+            </div>
+            <div class="card-action">
+              <a class="btn btn-blue" href="#!" onclick="addToCart('Rascador Torre (Sisal)', 79.90)">Comprar</a>
+              <a class="btn btn-pink" target="_blank" rel="noopener"
+                 href="https://wa.me/51923065300?text=Hola%20Peticiosos%20🐾%20Quiero%20Rascador%20Torre%20(Sisal)%20a%20S/%2079.90">
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="col s12 m6 l4 product-item" data-name="juguete caña plumas">
+          <div class="card soft-card">
+            <div class="card-image">
+              <img src="assets/cat-acc-2.jpg" alt="Caña con Plumas">
+              <span class="card-title" style="font-weight:900;">Caña con Plumas</span>
+            </div>
+            <div class="card-content">
+              <p>Ideal para juego diario. Estimula el instinto de caza y evita el estrés.</p>
+              <p style="margin-top:12px;">
+                <span class="price-badge"><i class="material-icons">sell</i> S/ 15.90</span>
+                <span class="grey-text" style="margin-left:10px;">1 und</span>
+              </p>
+            </div>
+            <div class="card-action">
+              <a class="btn btn-blue" href="#!" onclick="addToCart('Caña con Plumas', 15.90)">Comprar</a>
+              <a class="btn btn-pink" target="_blank" rel="noopener"
+                 href="https://wa.me/51923065300?text=Hola%20Peticiosos%20🐾%20Quiero%20Caña%20con%20Plumas%20a%20S/%2015.90">
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="col s12 m6 l4 product-item" data-name="arenero bandeja grande">
+          <div class="card soft-card">
+            <div class="card-image">
+              <img src="assets/cat-acc-3.jpg" alt="Arenero">
+              <span class="card-title" style="font-weight:900;">Arenero Bandeja Grande</span>
+            </div>
+            <div class="card-content">
+              <p>Bandeja amplia, fácil de limpiar. Ideal para gatos medianos a grandes.</p>
+              <p style="margin-top:12px;">
+                <span class="price-badge"><i class="material-icons">sell</i> S/ 39.90</span>
+                <span class="grey-text" style="margin-left:10px;">1 und</span>
+              </p>
+            </div>
+            <div class="card-action">
+              <a class="btn btn-blue" href="#!" onclick="addToCart('Arenero Bandeja Grande', 39.90)">Comprar</a>
+              <a class="btn btn-pink" target="_blank" rel="noopener"
+                 href="https://wa.me/51923065300?text=Hola%20Peticiosos%20🐾%20Quiero%20Arenero%20Bandeja%20Grande%20a%20S/%2039.90">
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="col s12 m6 l4 product-item" data-name="arena aglomerante 10kg">
+          <div class="card soft-card">
+            <div class="card-image">
+              <img src="assets/cat-acc-4.jpg" alt="Arena Aglomerante">
+              <span class="card-title" style="font-weight:900;">Arena Aglomerante</span>
+            </div>
+            <div class="card-content">
+              <p>Control de olor y fácil retiro. Recomendada para mantener la bandeja limpia.</p>
+              <p style="margin-top:12px;">
+                <span class="price-badge"><i class="material-icons">sell</i> S/ 49.90</span>
+                <span class="grey-text" style="margin-left:10px;">10 kg</span>
+              </p>
+            </div>
+            <div class="card-action">
+              <a class="btn btn-blue" href="#!" onclick="addToCart('Arena Aglomerante - 10kg', 49.90)">Comprar</a>
+              <a class="btn btn-pink" target="_blank" rel="noopener"
+                 href="https://wa.me/51923065300?text=Hola%20Peticiosos%20🐾%20Quiero%20Arena%20Aglomerante%2010kg%20a%20S/%2049.90">
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="col s12 m6 l4 product-item" data-name="comedero doble acero">
+          <div class="card soft-card">
+            <div class="card-image">
+              <img src="assets/cat-acc-5.jpg" alt="Comedero Doble">
+              <span class="card-title" style="font-weight:900;">Comedero Doble</span>
+            </div>
+            <div class="card-content">
+              <p>Dos compartimentos (agua + comida). Fácil de lavar y antideslizante.</p>
+              <p style="margin-top:12px;">
+                <span class="price-badge"><i class="material-icons">sell</i> S/ 24.90</span>
+                <span class="grey-text" style="margin-left:10px;">1 und</span>
+              </p>
+            </div>
+            <div class="card-action">
+              <a class="btn btn-blue" href="#!" onclick="addToCart('Comedero Doble', 24.90)">Comprar</a>
+              <a class="btn btn-pink" target="_blank" rel="noopener"
+                 href="https://wa.me/51923065300?text=Hola%20Peticiosos%20🐾%20Quiero%20Comedero%20Doble%20a%20S/%2024.90">
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="col s12 m6 l4 product-item" data-name="juguete ratón catnip">
+          <div class="card soft-card">
+            <div class="card-image">
+              <img src="assets/cat-acc-6.jpg" alt="Ratón con Catnip">
+              <span class="card-title" style="font-weight:900;">Ratón con Catnip</span>
+            </div>
+            <div class="card-content">
+              <p>Juguete pequeño con catnip para estimular el juego y la actividad física.</p>
+              <p style="margin-top:12px;">
+                <span class="price-badge"><i class="material-icons">sell</i> S/ 9.90</span>
+                <span class="grey-text" style="margin-left:10px;">1 und</span>
+              </p>
+            </div>
+            <div class="card-action">
+              <a class="btn btn-blue" href="#!" onclick="addToCart('Ratón con Catnip', 9.90)">Comprar</a>
+              <a class="btn btn-pink" target="_blank" rel="noopener"
+                 href="https://wa.me/51923065300?text=Hola%20Peticiosos%20🐾%20Quiero%20Ratón%20con%20Catnip%20a%20S/%209.90">
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FAB carrito -->
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large pink lighten-2" onclick="openCart()">
+      <i class="large material-icons">shopping_cart</i>
+    </a>
+  </div>
+
+  <!-- Modal carrito -->
+  <div id="cartModal" class="modal" style="border-radius:20px;">
+    <div class="modal-content">
+      <h5 style="font-weight:900;color:#2d5fa4;">Tu carrito 🛒</h5>
+      <ul id="cartList" class="collection"></ul>
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <b>Total:</b><span id="cartTotal">S/ 0.00</span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close btn-flat">Cerrar</a>
+      <a href="#!" class="btn btn-blue" onclick="checkoutWhatsApp()">Pedir por WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- FOOTER (iframe) -->
+  <iframe src="components/footer.html" style="width:100%; border:0; height:140px;" scrolling="no"></iframe>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    var cart = [];
+
+    window.addToCart = function(name, price){
+      cart.push({name, price});
+      if (window.M) M.toast({html: "Agregado: " + name});
+      renderCart();
+    }
+
+    window.renderCart = function(){
+      const list = document.getElementById("cartList");
+      const totalEl = document.getElementById("cartTotal");
+      if(!list || !totalEl) return;
+
+      list.innerHTML = "";
+      let total = 0;
+
+      cart.forEach((p, idx) => {
+        total += p.price;
+        const li = document.createElement("li");
+        li.className = "collection-item";
+        li.innerHTML = `
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;">
+            <span><b>${p.name}</b><br><span class="grey-text">S/ ${p.price.toFixed(2)}</span></span>
+            <a href="#!" class="secondary-content" onclick="removeItem(${idx})">
+              <i class="material-icons red-text">delete</i>
+            </a>
+          </div>
+        `;
+        list.appendChild(li);
+      });
+
+      totalEl.textContent = "S/ " + total.toFixed(2);
+    }
+
+    window.removeItem = function(index){
+      cart.splice(index, 1);
+      renderCart();
+    }
+
+    window.openCart = function(){
+      const el = document.getElementById("cartModal");
+      const modal = M.Modal.getInstance(el) || M.Modal.init(el);
+      modal.open();
+    }
+
+    window.checkoutWhatsApp = function(){
+      if(cart.length === 0){ M.toast({html:"Tu carrito está vacío"}); return; }
+
+      let msg = "Hola Peticiosos 🐾, quiero pedir:%0A";
+      let total = 0;
+      cart.forEach(p => {
+        msg += "• " + encodeURIComponent(p.name) + " - S/ " + p.price.toFixed(2) + "%0A";
+        total += p.price;
+      });
+      msg += "%0ATotal: S/ " + total.toFixed(2);
+
+      const phone = "51923065300";
+      window.open("https://wa.me/" + phone + "?text=" + msg, "_blank");
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      M.AutoInit();
+
+      const searchInput = document.getElementById("searchInput");
+      if(searchInput){
+        searchInput.addEventListener("keyup", function(){
+          const text = this.value.toLowerCase();
+          document.querySelectorAll(".product-item").forEach(item => {
+            const name = (item.getAttribute("data-name") || "").toLowerCase();
+            item.style.display = name.includes(text) ? "" : "none";
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

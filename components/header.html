@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <style>
+    body{ margin:0; background:#fff; }
+    nav{ background:#fff; box-shadow:none; border-bottom:2px solid #f8c4d8; }
+    .brand-logo img{ height:55px; margin-top:5px; }
+    .btn-pink{ background:#f8c4d8; border-radius:20px; color:#333; font-weight:800; }
+    ul a{ font-weight:700; color:#2d5fa4 !important; }
+
+    /* 🎵 Botón pastel */
+    .music-btn{
+    background:#fce4ec;
+    color:#2d5fa4;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-left:1px;
+
+    position:relative;
+    top:13px;   /* 🔥 ajusta fino vertical */
+    }
+
+    .music-btn:hover{
+    background:#f8c4d8;
+    transform:scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <!-- 🎵 AUDIO -->
+  <audio id="bgMusic" preload="auto" loop>
+    <source src="../assets/numberbeast.mp3" type="audio/mpeg">
+  </audio>
+  <nav>
+    <div class="nav-wrapper container">
+      <a href="../index.html" target="_parent" class="brand-logo">
+        <img src="../assets/logo-peticiosos.jpg" alt="Peticiosos">
+      </a>
+
+      <ul class="right">
+        <li><a href="../index.html#productos" target="_parent">Productos</a></li>
+        <li><a href="../index.html#nosotros" target="_parent">Nosotros</a></li>
+        <li><a href="../index.html#contacto" class="btn btn-pink" target="_parent">CONTACTO</a></li>
+        <!-- 🎵 Botón Música -->
+        <li>
+          <a id="musicBtn" class="btn music-btn">
+            <i class="material-icons">pause_circle_filled</i>
+          </a>
+        </li>
+      </ul>
+      </ul>
+    </div>
+  </nav>
+
+ <script>
+    document.addEventListener("DOMContentLoaded", function(){
+
+      const audio = document.getElementById("bgMusic");
+      const btn = document.getElementById("musicBtn");
+
+      audio.volume = 0.30; // 🔊 volumen suave 15%
+
+      // 🎵 Intentar autoplay
+      audio.play().then(()=>{
+        // Si funciona autoplay
+        btn.innerHTML = '<i class="material-icons">pause_circle_filled</i>';
+      }).catch(()=>{
+        // Si navegador bloquea, cambiar botón a Play
+        btn.innerHTML = '<i class="material-icons">play_circle_filled</i>';
+
+        // Reproducir en primer click del usuario
+        const startMusic = () => {
+          audio.play().catch(()=>{});
+          btn.innerHTML = '<i class="material-icons">pause_circle_filled</i>';
+          document.removeEventListener("click", startMusic);
+        };
+
+        document.addEventListener("click", startMusic);
+      });
+
+      // 🎵 Botón manual
+      btn.addEventListener("click", function(e){
+        e.stopPropagation();
+
+        if(audio.paused){
+          audio.play();
+          btn.innerHTML = '<i class="material-icons">play_circle_filled</i>';
+        }else{
+          audio.pause();
+          btn.innerHTML = '<i class="material-icons">pause_circle_filled</i>';
+        }
+      });
+
+    });
+  </script>
+
+</body>
+</html>

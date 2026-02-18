@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Peticiosos | Comida para Perros</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <link rel="icon" type="image/png" href="assets/logo-peticiosos.jpg">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+    body { background-color: #fff8fb; }
+    .section-title{ color:#2d5fa4; font-weight:900; }
+
+    .soft-card{
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
+      border: 1px solid rgba(0,0,0,.06);
+    }
+
+    .price-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      font-weight:900;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(248,196,216,.45);
+      border:1px solid rgba(0,0,0,.06);
+    }
+
+    .btn-pink{
+      background:#f8c4d8;
+      color:#3a3a3a;
+      font-weight:900;
+      border-radius:999px;
+      text-transform:none;
+      box-shadow:none;
+    }
+    .btn-blue{
+      background:#2d5fa4;
+      border-radius:999px;
+      text-transform:none;
+      box-shadow:none;
+      font-weight:900;
+    }
+
+    .search-box{
+      background:#fff;
+      border-radius:999px;
+      padding: 6px 14px;
+      border:1px solid rgba(0,0,0,.08);
+      box-shadow: 0 10px 25px rgba(0,0,0,.06);
+    }
+    .search-box input{
+      margin:0 !important;
+      border-bottom:none !important;
+      box-shadow:none !important;
+    }
+    .search-box i{ margin-right:8px; }
+
+    /* ✅ GRID FLEX */
+    #productGrid{ display:flex; flex-wrap:wrap; }
+    #productGrid .col{ float:none !important; display:flex; }
+    #productGrid .card{ width:100%; height:100%; display:flex; flex-direction:column; }
+    #productGrid .card-content{ flex:1; }
+    #productGrid .card-action{ margin-top:auto; }
+
+    footer{ margin-top:40px; }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+   <iframe src="components/header.html" style="width:100%; border:0; height:80px;" scrolling="no"></iframe>
+
+  <div class="section center">
+    <div class="container">
+      <h4 class="section-title">Accesorios para Perro 🐾</h4>
+      <p class="grey-text text-darken-2">Jaulas, ruedas, sustratos, alimento especial y accesorios.</p>
+
+      <div class="row" style="margin-top:20px;">
+        <div class="col s12 m8 offset-m2">
+          <div class="search-box valign-wrapper">
+            <i class="material-icons grey-text">search</i>
+            <input id="searchInput" type="text" placeholder="Buscar (ej: jaula, rueda, sustrato, alimento)">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- GRID DE PRODUCTOS -->
+  <div class="section">
+    <div class="container">
+      <div class="row" id="productGrid">
+
+        <!-- Producto 1 -->
+        <div class="col s12 m6 l4 product-item" data-name="croquetas premium adulto pollo 3kg">
+          <div class="card soft-card">
+            <div class="card-image">
+              <img src="assets/dog-food-1.jpg" alt="Croquetas Premium Adulto">
+              <span class="card-title" style="font-weight:900;">Premium Adulto (Pollo)</span>
+            </div>
+            <div class="card-content">
+              <p>Alimento balanceado para perros adultos. Proteína de pollo, brillo de pelaje y buena digestión.</p>
+              <p style="margin-top:12px;">
+                <span class="price-badge"><i class="material-icons">sell</i> S/ 59.90</span>
+                <span class="grey-text" style="margin-left:10px;">3 kg</span>
+              </p>
+            </div>
+            <div class="card-action">
+              <a class="btn btn-blue" href="#!" onclick="addToCart('Premium Adulto (Pollo) - 3kg', 59.90)">Comprar</a>
+              <a class="btn btn-pink" target="_blank" rel="noopener"
+                 href="https://wa.me/51923065300?text=Hola%20Peticiosos%20🐾%20Quiero%20Premium%20Adulto%20(Pollo)%203kg%20a%20S/%2059.90">
+                 WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="col s12 m6 l4 product-item" data-name="croquetas cachorros puppy pollo arroz 1kg">
+          <div class="card soft-card">
+            <div class="card-image">
+              <img src="assets/dog-food-2.jpg" alt="Cachorros Puppy">
+              <span class="card-title" style="font-weight:900;">Puppy (Cachorros)</span>
+            </div>
+            <div class="card-content">
+              <p>Ideal para cachorros: crecimiento sano, calcio y vitaminas. Sabor pollo y arroz.</p>
+              <p style="margin-top:12px;">
+                <span class="price-badge"><i class="material-icons">sell</i> S/ 29.90</span>
+                <span class="grey-text" style="margin-left:10px;">1 kg</span>
+              </p>
+            </div>
+            <div class="card-action">
+              <a class="btn btn-blue" href="#!" onclick="addToCart('Puppy (Cachorros) - 1kg', 29.90)">Comprar</a>
+              <a class="btn btn-pink" target="_blank" rel="noopener"
+                 href="https://wa.me/51923065300?text=Hola%20Peticiosos%20🐾%20Quiero%20Puppy%20(Cachorros)%201kg%20a%20S/%2029.90">
+                 WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="col s12 m6 l4 product-item" data-name="hipoalergenico salmón piel sensible 2kg">
+          <div class="card soft-card">
+            <div class="card-image">
+              <img src="assets/dog-food-3.jpg" alt="Hipoalergénico">
+              <span class="card-title" style="font-weight:900;">Hipoalergénico (Salmón)</span>
+            </div>
+            <div class="card-content">
+              <p>Para piel sensible o alergias. Fórmula con salmón y omegas para reducir irritaciones.</p>
+              <p style="margin-top:12px;">
+                <span class="price-badge"><i class="material-icons">sell</i> S/ 74.90</span>
+                <span class="grey-text" style="margin-left:10px;">2 kg</span>
+              </p>
+            </div>
+            <div class="card-action">
+              <a class="btn btn-blue" href="#!" onclick="addToCart('Hipoalergénico (Salmón) - 2kg', 74.90)">Comprar</a>
+              <a class="btn btn-pink" target="_blank" rel="noopener"
+                 href="https://wa.me/51923065300?text=Hola%20Peticiosos%20🐾%20Quiero%20Hipoalergénico%20(Salmón)%202kg%20a%20S/%2074.90">
+                 WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="col s12 m6 l4 product-item" data-name="light control peso bajo grasa 3kg">
+          <div class="card soft-card">
+            <div class="card-image">
+              <img src="assets/dog-food-4.jpg" alt="Control de Peso">
+              <span class="card-title" style="font-weight:900;">Light (Control de Peso)</span>
+            </div>
+            <div class="card-content">
+              <p>Menos grasa y más fibra para ayudar a controlar el peso sin perder energía.</p>
+              <p style="margin-top:12px;">
+                <span class="price-badge"><i class="material-icons">sell</i> S/ 64.90</span>
+                <span class="grey-text" style="margin-left:10px;">3 kg</span>
+              </p>
+            </div>
+            <div class="card-action">
+              <a class="btn btn-blue" href="#!" onclick="addToCart('Light (Control de Peso) - 3kg', 64.90)">Comprar</a>
+              <a class="btn btn-pink" target="_blank" rel="noopener"
+                 href="https://wa.me/51923065300?text=Hola%20Peticiosos%20🐾%20Quiero%20Light%20(Control%20de%20Peso)%203kg%20a%20S/%2064.90">
+                 WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 5 -->
+        <div class="col s12 m6 l4 product-item" data-name="snacks premios galletas entrenamiento 300g">
+          <div class="card soft-card">
+            <div class="card-image">
+              <img src="assets/dog-food-5.jpg" alt="Snacks">
+              <span class="card-title" style="font-weight:900;">Snacks / Premios</span>
+            </div>
+            <div class="card-content">
+              <p>Premios para entrenamiento. Crujientes y sabrosos, perfectos para reforzar conductas.</p>
+              <p style="margin-top:12px;">
+                <span class="price-badge"><i class="material-icons">sell</i> S/ 18.50</span>
+                <span class="grey-text" style="margin-left:10px;">300 g</span>
+              </p>
+            </div>
+            <div class="card-action">
+              <a class="btn btn-blue" href="#!" onclick="addToCart('Snacks / Premios - 300g', 18.50)">Comprar</a>
+              <a class="btn btn-pink" target="_blank" rel="noopener"
+                 href="https://wa.me/51923065300?text=Hola%20Peticiosos%20🐾%20Quiero%20Snacks%20/ Premios%20300g%20a%20S/%2018.50">
+                 WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 6 -->
+        <div class="col s12 m6 l4 product-item" data-name="lata húmedo pate carne 400g">
+          <div class="card soft-card">
+            <div class="card-image">
+              <img src="assets/dog-food-6.jpg" alt="Comida Húmeda">
+              <span class="card-title" style="font-weight:900;">Comida Húmeda (Paté)</span>
+            </div>
+            <div class="card-content">
+              <p>Paté de carne en lata. Ideal para mezclar con croquetas o para perros con poco apetito.</p>
+              <p style="margin-top:12px;">
+                <span class="price-badge"><i class="material-icons">sell</i> S/ 12.90</span>
+                <span class="grey-text" style="margin-left:10px;">400 g</span>
+              </p>
+            </div>
+            <div class="card-action">
+              <a class="btn btn-blue" href="#!" onclick="addToCart('Comida Húmeda (Paté) - 400g', 12.90)">Comprar</a>
+              <a class="btn btn-pink" target="_blank" rel="noopener"
+                 href="https://wa.me/51923065300?text=Hola%20Peticiosos%20🐾%20Quiero%20Comida%20Húmeda%20(Paté)%20400g%20a%20S/%2012.90">
+                 WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MINI CARRITO (simple) -->
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large pink lighten-2" onclick="openCart()">
+      <i class="large material-icons">shopping_cart</i>
+    </a>
+  </div>
+
+  <!-- MODAL CARRITO -->
+  <div id="cartModal" class="modal" style="border-radius:20px;">
+    <div class="modal-content">
+      <h5 style="font-weight:900;color:#2d5fa4;">Tu carrito 🛒</h5>
+      <ul id="cartList" class="collection"></ul>
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <b>Total:</b>
+        <span id="cartTotal">S/ 0.00</span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close btn-flat">Cerrar</a>
+      <a href="#!" class="btn btn-blue" onclick="checkoutWhatsApp()">Pedir por WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+    <iframe src="components/footer.html" style="width:100%; border:0; height:140px;" scrolling="no"></iframe>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        // ✅ 1) VARIABLES GLOBALES (antes de cualquier función)
+        var cart = [];
+
+        // ✅ 2) EXPONER FUNCIONES PARA onclick=""
+        window.addToCart = function(name, price){
+            cart.push({name, price});
+            if (window.M) M.toast({html: "Agregado: " + name});
+            renderCart();
+        }
+
+        window.renderCart = function(){
+            const list = document.getElementById("cartList");
+            const totalEl = document.getElementById("cartTotal");
+            if(!list || !totalEl) return;
+
+            list.innerHTML = "";
+            let total = 0;
+
+            cart.forEach((p, idx) => {
+            total += p.price;
+
+            const li = document.createElement("li");
+            li.className = "collection-item";
+            li.innerHTML = `
+                <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;">
+                <span><b>${p.name}</b><br><span class="grey-text">S/ ${p.price.toFixed(2)}</span></span>
+                <a href="#!" class="secondary-content" onclick="removeItem(${idx})">
+                    <i class="material-icons red-text">delete</i>
+                </a>
+                </div>
+            `;
+            list.appendChild(li);
+            });
+
+            totalEl.textContent = "S/ " + total.toFixed(2);
+        }
+
+        window.removeItem = function(index){
+            cart.splice(index, 1);
+            renderCart();
+        }
+
+        window.openCart = function(){
+            const el = document.getElementById("cartModal");
+            if(!el) return;
+            const modal = M.Modal.getInstance(el) || M.Modal.init(el);
+            modal.open();
+        }
+
+        window.checkoutWhatsApp = function(){
+            if(cart.length === 0){
+            M.toast({html: "Tu carrito está vacío"});
+            return;
+            }
+
+            let msg = "Hola Peticiosos 🐾, quiero pedir:%0A";
+            let total = 0;
+
+            cart.forEach(p => {
+            msg += "• " + encodeURIComponent(p.name) + " - S/ " + p.price.toFixed(2) + "%0A";
+            total += p.price;
+            });
+
+            msg += "%0ATotal: S/ " + total.toFixed(2);
+
+            // ✅ Cambia el número
+            const phone = "51923065300";
+            window.open("https://wa.me/" + phone + "?text=" + msg, "_blank");
+        }
+
+        // ✅ 3) INIT MATERIALIZE
+        document.addEventListener('DOMContentLoaded', function() {
+            M.AutoInit();
+
+            // 🔎 Si NO tienes buscador en este HTML, comenta esto para evitar error:
+            const searchInput = document.getElementById("searchInput");
+            if(searchInput){
+            searchInput.addEventListener("keyup", function(){
+                const text = this.value.toLowerCase();
+                document.querySelectorAll(".product-item").forEach(item => {
+                const name = (item.getAttribute("data-name") || "").toLowerCase();
+                // ✅ con flex mejor "" que "block"
+                item.style.display = name.includes(text) ? "" : "none";
+                });
+            });
+            }
+        });
+    </script>
+</body>
+</html>

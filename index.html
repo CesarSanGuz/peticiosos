@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Peticiosos | Comida y Accesorios para Mascotas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- 🔹 FAVICON (logo pequeño en la pestaña) -->
+  <link rel="icon" type="image/png" href="assets/logo-peticiosos.jpg">
+
+  <!-- Materialize CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #fff8fb;
+    }
+
+    nav {
+      background-color: #ffffff;
+      box-shadow: none;
+      border-bottom: 2px solid #f8c4d8;
+    }
+
+    .brand-logo img {
+      height: 55px;
+      margin-top: 5px;
+    }
+
+    .btn-pink {
+      background-color: #f8c4d8;
+      color: #3a3a3a;
+      font-weight: bold;
+      border-radius: 20px;
+    }
+
+    .btn-blue {
+      background-color: #2d5fa4;
+      border-radius: 20px;
+    }
+
+    .section-title {
+      color: #2d5fa4;
+      font-weight: bold;
+    }
+
+    .card {
+      border-radius: 20px;
+    }
+
+    footer {
+      background-color: #f8c4d8;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- 🔹 NAVBAR -->
+<iframe src="components/header.html" style="width:100%; border:0; height:80px;"></iframe>
+
+<!-- 🔹 HERO -->
+<div class="section center">
+  <div class="container">
+    <h3 class="section-title">Amor y cuidado para tus mascotas 🐾</h3>
+    <p>Venta de comida y accesorios para perros, gatos, hámsters y más.</p>
+    <a href="#productos" class="btn btn-blue">Ver Productos</a>
+  </div>
+</div>
+
+<!-- 🔹 PRODUCTOS -->
+<div id="productos" class="section">
+  <div class="container">
+    <h4 class="section-title center">Nuestros Productos</h4>
+
+    <div class="row">
+      <!-- CARD: Comida para Perros (clickeable) -->
+      <div class="col s12 m4">
+        <a href="perros.html" style="color: inherit;">
+          <div class="card hoverable" style="border-radius: 20px;">
+            <div class="card-content center">
+              <i class="material-icons large pink-text">pets</i>
+              <span class="card-title">Comida para Perros</span>
+              <p>Alimento premium y snacks.</p>
+              <p class="grey-text" style="margin-top:10px;font-weight:600;">Ver catálogo →</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col s12 m4">
+        <a href="gatos.html" style="color: inherit;">
+          <div class="card hoverable" style="border-radius: 20px;">
+            <div class="card-content center">
+              <i class="material-icons large blue-text">favorite</i>
+              <span class="card-title">Accesorios para Gatos</span>
+              <p>Rascadores, juguetes y más.</p>
+              <p class="grey-text" style="margin-top:10px;font-weight:600;">Ver catálogo →</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col s12 m4">
+        <a href="hamsters.html" style="color: inherit;">
+          <div class="card hoverable" style="border-radius: 20px;">
+            <div class="card-content center">
+              <i class="material-icons large amber-text">emoji_nature</i>
+              <span class="card-title">Hámsters y Otros</span>
+              <p>Jaulas, ruedas y alimento especial.</p>
+              <p class="grey-text" style="margin-top:10px;font-weight:600;">Ver catálogo →</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 🔹 NOSOTROS -->
+<div id="nosotros" class="section pink lighten-5">
+  <div class="container">
+
+    <div class="row" style="margin-bottom: 0;">
+      <!-- Texto -->
+      <div class="col s12 m6">
+        <h4 class="section-title">¿Quiénes somos?</h4>
+        <p style="font-size: 1.05rem; line-height: 1.7;">
+          En <b>Peticiosos</b> amamos a las mascotas tanto como tú 🐾. Somos una tienda dedicada a ofrecer
+          <b>comida</b> y <b>accesorios</b> con enfoque en <b>perros</b>, <b>gatos</b> y <b>hámsters</b>,
+          además de productos para otras especies.
+        </p>
+
+        <p style="font-size: 1.05rem; line-height: 1.7;">
+          Seleccionamos cada producto pensando en:
+          <b>calidad</b>, <b>seguridad</b> y <b>bienestar</b>. Queremos que encuentres opciones confiables,
+          bonitas y prácticas para el día a día.
+        </p>
+
+        <!-- Mini chips -->
+        <div style="margin-top: 14px;">
+          <div class="chip pink lighten-4">🐶 Perros</div>
+          <div class="chip blue lighten-4">🐱 Gatos</div>
+          <div class="chip amber lighten-4">🐹 Hámsters</div>
+          <div class="chip grey lighten-3">🦜 Otros</div>
+        </div>
+
+        <!-- Botones -->
+        <div style="margin-top: 18px;">
+          <a href="#productos" class="btn btn-blue" style="border-radius: 20px;">Ver productos</a>
+          <a href="#contacto" class="btn btn-pink" style="border-radius: 20px; margin-left: 10px;">Contactar</a>
+        </div>
+      </div>
+
+      <!-- Imágenes -->
+      <div class="col s12 m6">
+        <div class="row" style="margin-bottom:0;">
+          <div class="col s12">
+            <div class="card" style="border-radius: 20px; overflow: hidden;">
+              <div class="card-image">
+                <!-- Puedes reemplazar por una imagen tuya -->
+                <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=60" alt="Mascotas felices">
+              </div>
+            </div>
+          </div>
+
+          <div class="col s6">
+            <div class="card" style="border-radius: 20px; overflow: hidden;">
+              <div class="card-image">
+                <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=900&q=60" alt="Gato con accesorios">
+              </div>
+            </div>
+          </div>
+
+          <div class="col s6">
+            <div class="card" style="border-radius: 20px; overflow: hidden;">
+              <div class="card-image">
+                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=900&q=60" alt="Hamster con habitat">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bloques de valores -->
+    <div class="row" style="margin-top: 10px;">
+      <div class="col s12 m4">
+        <div class="card" style="border-radius:20px;">
+          <div class="card-content center">
+            <i class="material-icons large pink-text">verified</i>
+            <span class="card-title" style="font-weight:700;">Calidad</span>
+            <p>Elegimos productos confiables, funcionales y seguros para el bienestar de tu mascota.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="card" style="border-radius:20px;">
+          <div class="card-content center">
+            <i class="material-icons large blue-text">local_shipping</i>
+            <span class="card-title" style="font-weight:700;">Atención rápida</span>
+            <p>Te respondemos para ayudarte a elegir y coordinar tu pedido de forma sencilla.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="card" style="border-radius:20px;">
+          <div class="card-content center">
+            <i class="material-icons large amber-text">favorite</i>
+            <span class="card-title" style="font-weight:700;">Amor por las mascotas</span>
+            <p>Somos petlovers 🐾 y queremos que tus engreídos vivan felices y bien cuidados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 🔹 CONTACTO -->
+<div id="contacto" class="section">
+  <div class="container">
+    <h4 class="section-title center">Contáctanos</h4>
+
+    <div class="row">
+      <form class="col s12 m8 offset-m2">
+
+        <div class="input-field">
+          <input type="text" id="nombre">
+          <label for="nombre">Nombre</label>
+        </div>
+
+        <div class="input-field">
+          <input type="tel" id="telefono">
+          <label for="telefono">Teléfono / WhatsApp</label>
+        </div>
+
+        <div class="input-field">
+          <textarea id="mensaje" class="materialize-textarea"></textarea>
+          <label for="mensaje">Mensaje</label>
+        </div>
+
+        <div class="center">
+          <button class="btn btn-pink">Enviar</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- 🔹 FOOTER -->
+<iframe src="components/footer.html" style="width:100%; border:0; height:140px;"></iframe>
+
+
+<!-- Materialize JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+</html>

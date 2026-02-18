@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Peticiosos | Hámsters y Otros</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <link rel="icon" type="image/png" href="assets/logo-peticiosos.jpg">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+    body { background-color: #fff8fb; }
+    .section-title{ color:#2d5fa4; font-weight:900; }
+
+    .soft-card{
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
+      border: 1px solid rgba(0,0,0,.06);
+    }
+
+    .price-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      font-weight:900;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(248,196,216,.45);
+      border:1px solid rgba(0,0,0,.06);
+    }
+
+    .btn-pink{
+      background:#f8c4d8;
+      color:#3a3a3a;
+      font-weight:900;
+      border-radius:999px;
+      text-transform:none;
+      box-shadow:none;
+    }
+    .btn-blue{
+      background:#2d5fa4;
+      border-radius:999px;
+      text-transform:none;
+      box-shadow:none;
+      font-weight:900;
+    }
+
+    .search-box{
+      background:#fff;
+      border-radius:999px;
+      padding: 6px 14px;
+      border:1px solid rgba(0,0,0,.08);
+      box-shadow: 0 10px 25px rgba(0,0,0,.06);
+    }
+    .search-box input{
+      margin:0 !important;
+      border-bottom:none !important;
+      box-shadow:none !important;
+    }
+    .search-box i{ margin-right:8px; }
+
+    /* ✅ GRID FLEX */
+    #productGrid{ display:flex; flex-wrap:wrap; }
+    #productGrid .col{ float:none !important; display:flex; }
+    #productGrid .card{ width:100%; height:100%; display:flex; flex-direction:column; }
+    #productGrid .card-content{ flex:1; }
+    #productGrid .card-action{ margin-top:auto; }
+
+    footer{ margin-top:40px; }
+  </style>
+</head>
+
+<body>
+
+  <iframe src="components/header.html" style="width:100%; border:0; height:80px;" scrolling="no"></iframe>
+
+  <div class="section center">
+    <div class="container">
+      <h4 class="section-title">Hámsters y Otros 🐹</h4>
+      <p class="grey-text text-darken-2">Jaulas, ruedas, sustratos, alimento especial y accesorios.</p>
+
+      <div class="row" style="margin-top:20px;">
+        <div class="col s12 m8 offset-m2">
+          <div class="search-box valign-wrapper">
+            <i class="material-icons grey-text">search</i>
+            <input id="searchInput" type="text" placeholder="Buscar (ej: jaula, rueda, sustrato, alimento)">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="row" id="productGrid">
+
+        <!-- 1 -->
+        <div class="col s12 m6 l4 product-item" data-name="jaula hamster 2 niveles">
+          <div class="card soft-card">
+            <div class="card-image">
+              <img src="assets/ham-1.jpg" alt="Jaula 2 niveles">
+              <span class="card-title" style="font-weight:900;">Jaula 2 Niveles</span>
+            </div>
+            <div class="card-content">
+              <p>Incluye comedero y bebedero. Espaciosa y fácil de limpiar.</p>
+              <p style="margin-top:12px;">
+                <span class="price-badge"><i class="material-icons">sell</i> S/ 99.90</span>
+                <span class="grey-text" style="margin-left:10px;">1 und</span>
+              </p>
+            </div>
+            <div class="card-action">
+              <a class="btn btn-blue" href="#!" onclick="addToCart('Jaula 2 Niveles', 99.90)">Comprar</a>
+              <a class="btn btn-pink" target="_blank" rel="noopener"
+                 href="https://wa.me/51923065300?text=Hola%20Peticiosos%20🐾%20Quiero%20Jaula%202%20Niveles%20a%20S/%2099.90">
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="col s12 m6 l4 product-item" data-name="rueda hamster silenciosa">
+          <div class="card soft-card">
+            <div class="card-image">
+              <img src="assets/ham-2.jpg" alt="Rueda Silenciosa">
+              <span class="card-title" style="font-weight:900;">Rueda Silenciosa</span>
+            </div>
+            <div class="card-content">
+              <p>Rueda estable para ejercicio diario. Menos ruido por la noche.</p>
+              <p style="margin-top:12px;">
+                <span class="price-badge"><i class="material-icons">sell</i> S/ 29.90</span>
+                <span class="grey-text" style="margin-left:10px;">1 und</span>
+              </p>
+            </div>
+            <div class="card-action">
+              <a class="btn btn-blue" href="#!" onclick="addToCart('Rueda Silenciosa', 29.90)">Comprar</a>
+              <a class="btn btn-pink" target="_blank" rel="noopener"
+                 href="https://wa.me/51923065300?text=Hola%20Peticiosos%20🐾%20Quiero%20Rueda%20Silenciosa%20a%20S/%2029.90">
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="col s12 m6 l4 product-item" data-name="sustrato viruta madera 1kg">
+          <div class="card soft-card">
+            <div class="card-image">
+              <img src="assets/ham-3.jpg" alt="Sustrato">
+              <span class="card-title" style="font-weight:900;">Sustrato (Viruta)</span>
+            </div>
+            <div class="card-content">
+              <p>Absorbente y cómodo. Ayuda a controlar olores y mantiene el hábitat limpio.</p>
+              <p style="margin-top:12px;">
+                <span class="price-badge"><i class="material-icons">sell</i> S/ 14.90</span>
+                <span class="grey-text" style="margin-left:10px;">1 kg</span>
+              </p>
+            </div>
+            <div class="card-action">
+              <a class="btn btn-blue" href="#!" onclick="addToCart('Sustrato (Viruta) - 1kg', 14.90)">Comprar</a>
+              <a class="btn btn-pink" target="_blank" rel="noopener"
+                 href="https://wa.me/51923065300?text=Hola%20Peticiosos%20🐾%20Quiero%20Sustrato%20(Viruta)%201kg%20a%20S/%2014.90">
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="col s12 m6 l4 product-item" data-name="alimento hamster mix semillas 500g">
+          <div class="card soft-card">
+            <div class="card-image">
+              <img src="assets/ham-4.jpg" alt="Alimento Hámster">
+              <span class="card-title" style="font-weight:900;">Alimento Mix Semillas</span>
+            </div>
+            <div class="card-content">
+              <p>Mezcla equilibrada con semillas y cereales. Ideal para consumo diario.</p>
+              <p style="margin-top:12px;">
+                <span class="price-badge"><i class="material-icons">sell</i> S/ 12.90</span>
+                <span class="grey-text" style="margin-left:10px;">500 g</span>
+              </p>
+            </div>
+            <div class="card-action">
+              <a class="btn btn-blue" href="#!" onclick="addToCart('Alimento Mix Semillas - 500g', 12.90)">Comprar</a>
+              <a class="btn btn-pink" target="_blank" rel="noopener"
+                 href="https://wa.me/51923065300?text=Hola%20Peticiosos%20🐾%20Quiero%20Alimento%20Mix%20Semillas%20500g%20a%20S/%2012.90">
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="col s12 m6 l4 product-item" data-name="bebedero botella hamster">
+          <div class="card soft-card">
+            <div class="card-image">
+              <img src="assets/ham-5.jpg" alt="Bebedero Botella">
+              <span class="card-title" style="font-weight:900;">Bebedero Botella</span>
+            </div>
+            <div class="card-content">
+              <p>Bebedero tipo botella con boquilla. Evita derrames y mantiene el agua limpia.</p>
+              <p style="margin-top:12px;">
+                <span class="price-badge"><i class="material-icons">sell</i> S/ 9.90</span>
+                <span class="grey-text" style="margin-left:10px;">1 und</span>
+              </p>
+            </div>
+            <div class="card-action">
+              <a class="btn btn-blue" href="#!" onclick="addToCart('Bebedero Botella', 9.90)">Comprar</a>
+              <a class="btn btn-pink" target="_blank" rel="noopener"
+                 href="https://wa.me/51923065300?text=Hola%20Peticiosos%20🐾%20Quiero%20Bebedero%20Botella%20a%20S/%209.90">
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="col s12 m6 l4 product-item" data-name="túnel juguete hamster">
+          <div class="card soft-card">
+            <div class="card-image">
+              <img src="assets/ham-6.jpg" alt="Túnel">
+              <span class="card-title" style="font-weight:900;">Túnel de Juego</span>
+            </div>
+            <div class="card-content">
+              <p>Túnel para explorar y jugar. Estimula actividad y reduce aburrimiento.</p>
+              <p style="margin-top:12px;">
+                <span class="price-badge"><i class="material-icons">sell</i> S/ 19.90</span>
+                <span class="grey-text" style="margin-left:10px;">1 und</span>
+              </p>
+            </div>
+            <div class="card-action">
+              <a class="btn btn-blue" href="#!" onclick="addToCart('Túnel de Juego', 19.90)">Comprar</a>
+              <a class="btn btn-pink" target="_blank" rel="noopener"
+                 href="https://wa.me/51923065300?text=Hola%20Peticiosos%20🐾%20Quiero%20Túnel%20de%20Juego%20a%20S/%2019.90">
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large pink lighten-2" onclick="openCart()">
+      <i class="large material-icons">shopping_cart</i>
+    </a>
+  </div>
+
+  <div id="cartModal" class="modal" style="border-radius:20px;">
+    <div class="modal-content">
+      <h5 style="font-weight:900;color:#2d5fa4;">Tu carrito 🛒</h5>
+      <ul id="cartList" class="collection"></ul>
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <b>Total:</b><span id="cartTotal">S/ 0.00</span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close btn-flat">Cerrar</a>
+      <a href="#!" class="btn btn-blue" onclick="checkoutWhatsApp()">Pedir por WhatsApp</a>
+    </div>
+  </div>
+
+  <iframe src="components/footer.html" style="width:100%; border:0; height:140px;" scrolling="no"></iframe>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    var cart = [];
+
+    window.addToCart = function(name, price){
+      cart.push({name, price});
+      if (window.M) M.toast({html: "Agregado: " + name});
+      renderCart();
+    }
+
+    window.renderCart = function(){
+      const list = document.getElementById("cartList");
+      const totalEl = document.getElementById("cartTotal");
+      if(!list || !totalEl) return;
+
+      list.innerHTML = "";
+      let total = 0;
+
+      cart.forEach((p, idx) => {
+        total += p.price;
+        const li = document.createElement("li");
+        li.className = "collection-item";
+        li.innerHTML = `
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;">
+            <span><b>${p.name}</b><br><span class="grey-text">S/ ${p.price.toFixed(2)}</span></span>
+            <a href="#!" class="secondary-content" onclick="removeItem(${idx})">
+              <i class="material-icons red-text">delete</i>
+            </a>
+          </div>
+        `;
+        list.appendChild(li);
+      });
+
+      totalEl.textContent = "S/ " + total.toFixed(2);
+    }
+
+    window.removeItem = function(index){
+      cart.splice(index, 1);
+      renderCart();
+    }
+
+    window.openCart = function(){
+      const el = document.getElementById("cartModal");
+      const modal = M.Modal.getInstance(el) || M.Modal.init(el);
+      modal.open();
+    }
+
+    window.checkoutWhatsApp = function(){
+      if(cart.length === 0){ M.toast({html:"Tu carrito está vacío"}); return; }
+
+      let msg = "Hola Peticiosos 🐾, quiero pedir:%0A";
+      let total = 0;
+      cart.forEach(p => {
+        msg += "• " + encodeURIComponent(p.name) + " - S/ " + p.price.toFixed(2) + "%0A";
+        total += p.price;
+      });
+      msg += "%0ATotal: S/ " + total.toFixed(2);
+
+      const phone = "51923065300";
+      window.open("https://wa.me/" + phone + "?text=" + msg, "_blank");
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      M.AutoInit();
+
+      const searchInput = document.getElementById("searchInput");
+      if(searchInput){
+        searchInput.addEventListener("keyup", function(){
+          const text = this.value.toLowerCase();
+          document.querySelectorAll(".product-item").forEach(item => {
+            const name = (item.getAttribute("data-name") || "").toLowerCase();
+            item.style.display = name.includes(text) ? "" : "none";
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
