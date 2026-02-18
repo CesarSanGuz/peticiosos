@@ -82,6 +82,52 @@
       background-color: var(--mint-100);
     }
 
+    .opening-banner{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      white-space:normal;
+      padding:8px 16px;
+      line-height:1.4;
+      max-width:100%;
+    }
+
+    .nav-wrapper{ display:flex; align-items:center; justify-content:flex-start; flex-wrap:wrap; gap:12px; }
+    .brand-logo{
+      position:relative;
+      display:flex;
+      align-items:center;
+      margin-right:auto;
+      line-height:1;
+    }
+    .brand-logo img{ height:50px; margin:0; display:block; }
+    ul.right{ position:static; display:flex; align-items:center; gap:12px; margin:0; margin-left:auto; }
+    ul.right a{ display:flex; align-items:center; gap:6px; }
+    ul a{ font-weight:700; color:#2d5fa4 !important; }
+    .sidenav-trigger{ color:#2d5fa4; }
+    .sidenav li a{ display:flex; align-items:center; gap:10px; }
+    .sidenav li i.material-icons{ color:#2d5fa4; }
+
+    .music-btn{
+      background:#fce4ec;
+      color:#2d5fa4;
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-left:1px;
+      position:relative;
+      top:0;
+    }
+
+    .music-btn:hover{
+      background:#f8c4d8;
+      transform:scale(1.1);
+    }
+
     .side-mascot-stack {
       position: fixed;
       top: 50%;
@@ -101,6 +147,42 @@
       cursor: pointer;
     }
 
+    .side-mascot-wrap{
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mascot-bubble{
+      position: absolute;
+      left: 70px;
+      top: 50%;
+      transform: translateY(-50%) scale(0.95);
+      background: #ffffff;
+      color: var(--wine-red);
+      border: 2px solid var(--pink-pastel);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+      box-shadow: 0 8px 16px rgba(0,0,0,.12);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+
+    .side-mascot-stack.right .mascot-bubble{
+      left: auto;
+      right: 70px;
+    }
+
+    .side-mascot-wrap:hover .mascot-bubble{
+      opacity: 1;
+      transform: translateY(-50%) scale(1);
+    }
+
     .side-mascot-stack.left {
       left: 18px;
     }
@@ -118,28 +200,96 @@
         display: none;
       }
     }
+
+    @media (max-width: 600px){
+      .nav-wrapper{ position:relative; min-height:64px; }
+      .sidenav-trigger{ position:absolute; left:0; top:50%; transform:translateY(-50%); z-index:2; }
+      .brand-logo{
+        position:absolute;
+        right:8px;
+        left:auto;
+        top:8px;
+        transform:none;
+        margin-right:0;
+        z-index:1;
+      }
+      .brand-logo img{ height:40px; margin:0; }
+      ul.right{ display:none; }
+      .music-btn{ width:34px; height:34px; top:0; }
+    }
   </style>
 </head>
 
 <body>
 
 <div class="side-mascot-stack left" aria-hidden="true">
-  <span class="side-mascot" role="img" aria-label="Perrito">🐶</span>
-  <span class="side-mascot" role="img" aria-label="Gatito">🐱</span>
-  <span class="side-mascot" role="img" aria-label="Hámster">🐹</span>
+  <span class="side-mascot-wrap">
+    <span class="side-mascot" role="img" aria-label="Perrito">🐶</span>
+    <span class="mascot-bubble">¡Guau!</span>
+  </span>
+  <span class="side-mascot-wrap">
+    <span class="side-mascot" role="img" aria-label="Gatito">🐱</span>
+    <span class="mascot-bubble">¡Miau!</span>
+  </span>
+  <span class="side-mascot-wrap">
+    <span class="side-mascot" role="img" aria-label="Hámster">🐹</span>
+    <span class="mascot-bubble">¿Muu?</span>
+  </span>
 </div>
 <div class="side-mascot-stack right" aria-hidden="true">
-  <span class="side-mascot" role="img" aria-label="Perrito">🐶</span>
-  <span class="side-mascot" role="img" aria-label="Gatito">🐱</span>
-  <span class="side-mascot" role="img" aria-label="Hámster">🐹</span>
+  <span class="side-mascot-wrap">
+    <span class="side-mascot" role="img" aria-label="Perrito">🐶</span>
+    <span class="mascot-bubble">¡Guau!</span>
+  </span>
+  <span class="side-mascot-wrap">
+    <span class="side-mascot" role="img" aria-label="Gatito">🐱</span>
+    <span class="mascot-bubble">¡Miau!</span>
+  </span>
+  <span class="side-mascot-wrap">
+    <span class="side-mascot" role="img" aria-label="Hámster">🐹</span>
+    <span class="mascot-bubble">¿Muu?</span>
+  </span>
 </div>
 
 <!-- 🔹 NAVBAR -->
-<iframe src="components/header.html" style="width:100%; border:0; height:80px;"></iframe>
+<audio id="bgMusic" preload="auto" loop>
+  <source src="assets/numberbeast.mp3" type="audio/mpeg">
+</audio>
+<nav>
+  <div class="nav-wrapper container">
+    <a href="#!" data-target="mobile-nav" class="sidenav-trigger left">
+      <i class="material-icons">menu</i>
+    </a>
+    <a href="index.html" class="brand-logo">
+      <img src="assets/logo-peticiosos.jpg" alt="Peticiosos">
+    </a>
+
+    <ul class="right">
+      <li><a href="index.html#productos"><i class="material-icons">storefront</i>Productos</a></li>
+      <li><a href="index.html#nosotros"><i class="material-icons">favorite</i>Nosotros</a></li>
+      <li><a href="index.html#contacto" class="btn btn-pink"><i class="material-icons">chat</i>Contacto</a></li>
+      <li>
+        <a id="musicBtn" class="btn music-btn">
+          <i class="material-icons">pause_circle_filled</i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<ul class="sidenav" id="mobile-nav">
+  <li><a class="sidenav-close" href="index.html#productos"><i class="material-icons">storefront</i>Productos</a></li>
+  <li><a class="sidenav-close" href="index.html#nosotros"><i class="material-icons">favorite</i>Nosotros</a></li>
+  <li><a class="sidenav-close" href="index.html#contacto"><i class="material-icons">chat</i>Contacto</a></li>
+  <li><a id="musicBtnMobile" class="sidenav-close"><i class="material-icons">music_note</i>Música</a></li>
+</ul>
 
 <!-- 🔹 HERO -->
 <div class="section center">
   <div class="container">
+    <div class="chip pink lighten-4 opening-banner" style="font-weight:700; margin-bottom:10px;">
+      ¡Próxima apertura! Muy pronto estaremos atendiendo.
+    </div>
     <h3 class="section-title">Amor y cuidado para tus mascotas 🐾</h3>
     <p>Venta de comida y accesorios para perros, gatos, hámsters y más.</p>
     <a href="#productos" class="btn btn-blue">Ver Productos</a>
@@ -340,6 +490,62 @@
 
 <!-- Materialize JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+    if (window.M && M.Sidenav) {
+      const el = document.getElementById("mobile-nav");
+      if (el) {
+        const instance = M.Sidenav.init(el, { edge: "left" });
+        el.querySelectorAll("a.sidenav-close").forEach(link => {
+          link.addEventListener("click", () => instance.close());
+        });
+      }
+    }
+
+    const audio = document.getElementById("bgMusic");
+    const btn = document.getElementById("musicBtn");
+    const btnMobile = document.getElementById("musicBtnMobile");
+
+    if (!audio || !btn) return;
+    audio.volume = 0.30;
+
+    audio.play().then(()=>{
+      btn.innerHTML = '<i class="material-icons">pause_circle_filled</i>';
+    }).catch(()=>{
+      btn.innerHTML = '<i class="material-icons">play_circle_filled</i>';
+      const startMusic = () => {
+        audio.play().catch(()=>{});
+        btn.innerHTML = '<i class="material-icons">pause_circle_filled</i>';
+        document.removeEventListener("click", startMusic);
+      };
+      document.addEventListener("click", startMusic);
+    });
+
+    btn.addEventListener("click", function(e){
+      e.stopPropagation();
+      if(audio.paused){
+        audio.play();
+        btn.innerHTML = '<i class="material-icons">play_circle_filled</i>';
+      }else{
+        audio.pause();
+        btn.innerHTML = '<i class="material-icons">pause_circle_filled</i>';
+      }
+    });
+
+    if (btnMobile) {
+      btnMobile.addEventListener("click", function(e){
+        e.preventDefault();
+        if(audio.paused){
+          audio.play();
+          btn.innerHTML = '<i class="material-icons">play_circle_filled</i>';
+        }else{
+          audio.pause();
+          btn.innerHTML = '<i class="material-icons">pause_circle_filled</i>';
+        }
+      });
+    }
+  });
+</script>
 
 </body>
 </html>
